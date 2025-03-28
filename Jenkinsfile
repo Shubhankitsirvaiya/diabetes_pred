@@ -10,11 +10,7 @@ pipeline {
     }
 
     stages {
-        stage('Clone Repo') {
-            steps {
-                checkout scm
-            }
-        }
+    
 
         stage('Build Docker Image') {
             steps {
