@@ -2,16 +2,14 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'sirvaiys/diabetes-jenkins'  // You can change the image name if needed
+        IMAGE_NAME = 'sirvaiys/diabetes-jenkins'
     }
 
     triggers {
-        githubPush() // 🔥 THIS enables GitHub webhook triggers
+        githubPush()
     }
 
     stages {
-    
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t $IMAGE_NAME:latest .'
