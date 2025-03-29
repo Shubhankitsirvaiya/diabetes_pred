@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: diabetes-app
+  labels:
+    app: diabetes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: diabetes
+  template:
+    metadata:
+      labels:
+        app: diabetes
+    spec:
+      containers:
+        - name: diabetes
+          image: sirvaiys/diabetes-jenkins:latest
+          ports:
+            - containerPort: 8002
